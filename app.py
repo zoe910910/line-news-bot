@@ -15,8 +15,8 @@ YOUR_CHANNEL_SECRET = "4c6e1abd743d80750ae6d52ca6a98e6a"
 # ---------------------------------
 
 app = Flask(__name__)
-line_bot_api = LineBotApi(41Ttrh6kR+4bOSbjIzQCbz0OAmjMnkp+5L0yeFbusiWHqee79jwaW+n5IT3hkrB+yXUday/pcc6N9xqSUnTHiBxit9TD6GkF6aFnNjvsciIxwmtTlV74gGbAqMFeqUZTGM4KsLhAEIdoszUa6gpCNAdB04t89/1O/w1cDnyilFU=)
-handler = WebhookHandler(4c6e1abd743d80750ae6d52ca6a98e6a)
+line_bot_api = LineBotApi("41Ttrh6kR+4bOSbjIzQCbz0OAmjMnkp+5L0yeFbusiWHqee79jwaW+n5IT3hkrB+yXUday/pcc6N9xqSUnTHiBxit9TD6GkF6aFnNjvsciIxwmtTlV74gGbAqMFeqUZTGM4KsLhAEIdoszUa6gpCNAdB04t89/1O/w1cDnyilFU=")
+handler = WebhookHandler("4c6e1abd743d80750ae6d52ca6a98e6a")
 
 port = int(os.environ.get('PORT', 5000))
 
