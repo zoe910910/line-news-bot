@@ -130,7 +130,4 @@ if __name__ == "__main__":
 
 
 # requirements.txt
-Flask
-gunicorn
-line-bot-sdk
-requests
+
