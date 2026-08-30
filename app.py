@@ -11,8 +11,8 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 # --- 1. 凭证设定 (请替换成您自己的凭证) ---
 # 请使用您的真实凭证。由于 Render 部署的稳定性已确认，此处的凭证是正确的。
-YOUR_CHANNEL_ACCESS_TOKEN = "K34uCEOUEhVUYr6THN9oV+04VH0Ytyg2l7e5XrsQHa8QPcHtkeoBzOWAzXbC8oRGQ/WI5KazdDSKhQQTBV4cBeA42WGjGkEMFf3tylBOpNhdyxuKRaB4QPz1BR27uglGvb4gDDR3NQxEs7VpHTBBBagdB04t89/1O/w1cDnyilFU="
-YOUR_CHANNEL_SECRET = "72c1dd7da164b7d96ae69d2cc0965f66"
+YOUR_CHANNEL_ACCESS_TOKEN = "41Ttrh6kR+4bOSbjIzQCbz0OAmjMnkp+5L0yeFbusiWHqee79jwaW+n5IT3hkrB+yXUday/pcc6N9xqSUnTHiBxit9TD6GkF6aFnNjvsciIxwmtTlV74gGbAqMFeqUZTGM4KsLhAEIdoszUa6gpCNAdB04t89/1O/w1cDnyilFU="
+YOUR_CHANNEL_SECRET = "4c6e1abd743d80750ae6d52ca6a98e6a"
 # ---------------------------------------------
 
 # Gemini API 配置
@@ -126,7 +126,7 @@ if __name__ == "__main__":
 ```
 ### 📦 文件依赖更新：`requirements.txt`
 
-由于我们使用了 `requests` 库来调用 Gemini API，您的 `requirements.txt` 已经是正确的了：
+#由于我们使用了 `requests` 库来调用 Gemini API，您的 `requirements.txt` 已经是正确的了：
 
 ```
 # requirements.txt
