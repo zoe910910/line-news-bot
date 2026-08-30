@@ -123,12 +123,12 @@ def generate_news_summary(brand_name):
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port)
-```
+
 ### 📦 文件依赖更新：`requirements.txt`
 
 #由于我们使用了 `requests` 库来调用 Gemini API，您的 `requirements.txt` 已经是正确的了：
 
-```
+
 # requirements.txt
 Flask
 gunicorn
