@@ -51,13 +51,21 @@ def generate_news_summary(brand_name):
     encoded_brand_name = urllib.parse.quote(brand_name)
     rss_url = f"https://news.google.com/rss/search?q={encoded_brand_name}+when:7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
 
-    headers = {"User-Agent": "Mozilla/5.0"}
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "application/rss+xml, application/xml, text/xml, */*",
+        "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7"
+    }
+
     try:
-        r = requests.get(rss_url, headers=headers, timeout=5)
+        # 將 timeout 調整為 15 秒
+        r = requests.get(rss_url, headers=headers, timeout=15)
         r.raise_for_status()
         xml = r.text
         root = ET.fromstring(xml)
         items = root.findall(".//item")
+    except requests.exceptions.Timeout:
+        return f"⚠️ 抓取 {brand_name} 新聞時連線逾時，請稍後再試一次。"
     except Exception as e:
         return f"抓取 {brand_name} 新聞時出錯: {e}"
 
@@ -66,9 +74,9 @@ def generate_news_summary(brand_name):
 
     summary = f"🤖 {brand_name} 當週前 10 則最新新聞：\n\n"
     for i, item in enumerate(items[:10], 1):
-        title = item.find("title").text
-        link = item.find("link").text
-        summary += f"**{i}. {title}**\n連結: {link}\n----------\n"
+        title = item.find("title").text if item.find("title") is not None else "無標題"
+        link = item.find("link").text if item.find("link") is not None else ""
+        summary += f"{i}. {title}\n連結: {link}\n----------\n"
 
     return summary
 
